@@ -36,6 +36,11 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  #collection-{{ section.id }} .card__media,
+  #collection-{{ section.id }} .card__inner {
+    border-radius: {{ section.settings.image_border_radius }}px;
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -384,6 +389,10 @@
         {
           "value": "square",
           "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
+        },
+        {
+          "value": "4:3",
+          "label": "t:sections.featured-collection.settings.image_ratio.options__4.label"
         }
       ],
       "default": "adapt",
@@ -428,6 +437,16 @@
       ],
       "default": "default",
       "label": "t:sections.all.image_shape.label"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.image_border_radius",
+      "default": 0
     },
     {
       "type": "checkbox",

@@ -437,7 +437,8 @@
             "label": "捲動時放大"
           }
         }
-      }
+      },
+      "image_border_radius": "圖片圓角"
     },
     "announcement-bar": {
       "name": "公告列",
@@ -1010,6 +1011,20 @@
         },
         "show_text_box": {
           "label": "容器"
+        },
+        "padding": {
+          "header": "內邊距",
+          "label": "內邊距（桌面端）"
+        },
+        "padding_mobile": {
+          "label": "內邊距（行動端）"
+        },
+        "border_radius": {
+          "header": "圓角",
+          "label": "圓角（桌面端）"
+        },
+        "border_radius_mobile": {
+          "label": "圓角（行動端）"
         },
         "image_overlay_opacity": {
           "label": "疊加層不透明度"

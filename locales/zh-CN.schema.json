@@ -437,7 +437,8 @@
             "label": "滚动时放大"
           }
         }
-      }
+      },
+      "image_border_radius": "图片圆角"
     },
     "announcement-bar": {
       "name": "公告栏",
@@ -1010,6 +1011,20 @@
         },
         "show_text_box": {
           "label": "容器"
+        },
+        "padding": {
+          "header": "内边距",
+          "label": "内边距（桌面端）"
+        },
+        "padding_mobile": {
+          "label": "内边距（移动端）"
+        },
+        "border_radius": {
+          "header": "圆角",
+          "label": "圆角（桌面端）"
+        },
+        "border_radius_mobile": {
+          "label": "圆角（移动端）"
         },
         "image_overlay_opacity": {
           "label": "叠加不透明度"
