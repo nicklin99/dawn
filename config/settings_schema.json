@@ -620,6 +620,45 @@
     ]
   },
   {
+    "name": "产品图片",
+    "settings": [
+      {
+        "type": "select",
+        "id": "product_image_ratio",
+        "options": [
+          {
+            "value": "adapt",
+            "label": "自适应"
+          },
+          {
+            "value": "portrait",
+            "label": "人像 (3:4)"
+          },
+          {
+            "value": "square",
+            "label": "正方形 (1:1)"
+          },
+          {
+            "value": "4:3",
+            "label": "横版 (4:3)"
+          }
+        ],
+        "default": "adapt",
+        "label": "产品图片比例"
+      },
+      {
+        "type": "range",
+        "id": "product_image_border_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "产品图片圆角",
+        "default": 0
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.collection_cards.name",
     "settings": [
       {

@@ -594,7 +594,6 @@
                                       {%- endif -%}
                                       {% render 'card-product',
                                         card_product: product,
-                                        media_aspect_ratio: block.settings.image_ratio,
                                         show_secondary_image: false,
                                         lazy_load: false,
                                         skip_styles: skip_card_product_styles,
@@ -1435,26 +1434,6 @@
           ],
           "label": "t:sections.main-product.blocks.complementary_products.settings.pagination_style.label",
           "default": "counter"
-        },
-        {
-          "type": "header",
-          "content": "t:sections.main-product.blocks.complementary_products.settings.product_card.heading"
-        },
-        {
-          "type": "select",
-          "id": "image_ratio",
-          "options": [
-            {
-              "value": "portrait",
-              "label": "t:sections.main-product.blocks.complementary_products.settings.image_ratio.options.option_1"
-            },
-            {
-              "value": "square",
-              "label": "t:sections.main-product.blocks.complementary_products.settings.image_ratio.options.option_2"
-            }
-          ],
-          "label": "t:sections.main-product.blocks.complementary_products.settings.image_ratio.label",
-          "default": "square"
         },
         {
           "type": "checkbox",

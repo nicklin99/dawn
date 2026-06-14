@@ -96,4 +96,38 @@ Ensure that you follow the list of [theme store requirements](https://shopify.de
 
 ## License
 
+## Shopify 官方开发文档参考
+
+### Theme 开发
+
+| 文档 | 链接 |
+|------|------|
+| 主题架构总览 | https://shopify.dev/docs/themes/architecture |
+| Liquid 模板语言 | https://shopify.dev/docs/api/liquid |
+| Section 开发 | https://shopify.dev/docs/themes/architecture/sections |
+| JSON 模板 (Online Store 2.0) | https://shopify.dev/docs/themes/architecture/templates |
+| Theme settings | https://shopify.dev/docs/themes/architecture/settings |
+| Asset 资源管理 | https://shopify.dev/docs/themes/architecture/assets |
+| Theme Check (代码检查) | https://shopify.dev/docs/themes/tools/theme-check |
+| Shopify CLI 命令 | https://shopify.dev/docs/themes/tools/cli |
+
+### App 开发
+
+| 文档 | 链接 |
+|------|------|
+| App 开发总览 | https://shopify.dev/docs/apps |
+| 快速开始 (Node/Remix) | https://shopify.dev/docs/apps/getting-started |
+| App 嵌入主题 (App Embeds) | https://shopify.dev/docs/apps/online-store/theme-app-extensions |
+| Shopify API 参考 | https://shopify.dev/docs/api |
+| Admin REST & GraphQL API | https://shopify.dev/docs/api/admin |
+| Storefront API | https://shopify.dev/docs/api/storefront |
+| App Bridge (嵌入式管理界面) | https://shopify.dev/docs/api/app-bridge |
+| Webhooks | https://shopify.dev/docs/apps/webhooks |
+
+### 综合入口
+
+[Shopify Dev Docs 首页](https://shopify.dev/docs) — 所有文档的入口
+
+---
+
 Copyright (c) 2021-present Shopify Inc. See [LICENSE](/LICENSE.md) for further details.

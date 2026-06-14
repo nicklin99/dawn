@@ -37,10 +37,6 @@
     }
   }
 
-  #collection-{{ section.id }} .card__media,
-  #collection-{{ section.id }} .card__inner {
-    border-radius: {{ section.settings.image_border_radius }}px;
-  }
 {%- endstyle -%}
 
 {%- liquid
@@ -124,7 +120,6 @@
               >
                 {% render 'card-product',
                   card_product: product,
-                  media_aspect_ratio: section.settings.image_ratio,
                   image_shape: section.settings.image_shape,
                   lazy_load: lazy_load,
                   show_secondary_image: section.settings.show_secondary_image,
@@ -160,7 +155,6 @@
               {%- assign placeholder_image = 'product-apparel-' | append: ridx -%}
               {% render 'card-product',
                 show_vendor: section.settings.show_vendor,
-                media_aspect_ratio: section.settings.image_ratio,
                 image_shape: section.settings.image_shape,
                 lazy_load: false,
                 placeholder_image: placeholder_image
@@ -377,30 +371,6 @@
     },
     {
       "type": "select",
-      "id": "image_ratio",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.featured-collection.settings.image_ratio.options__1.label"
-        },
-        {
-          "value": "portrait",
-          "label": "t:sections.featured-collection.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "square",
-          "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
-        },
-        {
-          "value": "4:3",
-          "label": "t:sections.featured-collection.settings.image_ratio.options__4.label"
-        }
-      ],
-      "default": "adapt",
-      "label": "t:sections.featured-collection.settings.image_ratio.label"
-    },
-    {
-      "type": "select",
       "id": "image_shape",
       "options": [
         {
@@ -438,16 +408,6 @@
       ],
       "default": "default",
       "label": "t:sections.all.image_shape.label"
-    },
-    {
-      "type": "range",
-      "id": "image_border_radius",
-      "min": 0,
-      "max": 40,
-      "step": 2,
-      "unit": "px",
-      "label": "t:sections.all.image_border_radius",
-      "default": 0
     },
     {
       "type": "checkbox",

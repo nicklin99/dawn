@@ -78,8 +78,8 @@
         "anchor_link_phMCWX": {
           "type": "anchor_link",
           "settings": {
-            "label": "Description",
-            "anchor_id": "description",
+            "label": "Introduction",
+            "anchor_id": "intros",
             "show_icon": false,
             "link_style": "text"
           }
@@ -114,6 +114,16 @@
         "color_scheme": "",
         "padding_top": 12,
         "padding_bottom": 12
+      }
+    },
+    "custom_liquid_6UYTWm": {
+      "type": "custom-liquid",
+      "name": "anchor intros",
+      "settings": {
+        "custom_liquid": "<div id=\"intros\"> </div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "rich_text_pgYPjy": {
@@ -158,38 +168,116 @@
       "type": "custom-liquid",
       "name": "anchor for specs",
       "settings": {
-        "custom_liquid": "<div id=\"specs\"></div>",
+        "custom_liquid": "<div id=\"specs\"> </div>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
       }
     },
-    "image_banner_bD8Umc": {
-      "type": "image-banner",
-      "name": "t:sections.image-banner.presets.name",
+    "image_with_text_JBL7Jz": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_PPTmUB": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Transaxle Side</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_nejDeX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Respect to M. ORAIN dated on Jan. 9, 1968<br/><br/></p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PPTmUB",
+        "text_nejDeX"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/Inner_CVJ_Design.width-800.png",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
         "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "padding": 50,
-        "padding_mobile": 20,
-        "border_radius": 0,
-        "border_radius_mobile": 0,
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
         "color_scheme": "",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_BbLfUM": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_WzfKjd": {
+          "type": "column",
+          "settings": {
+            "icon_selector": "none",
+            "image": "shopify://shop_images/Inner_CVJ_3.width-800.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_GBzXHQ": {
+          "type": "column",
+          "settings": {
+            "icon_selector": "none",
+            "image": "shopify://shop_images/Inner_CVJ_1.width-800.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_4RXWxp": {
+          "type": "column",
+          "settings": {
+            "icon_selector": "none",
+            "image": "shopify://shop_images/Inner_CVJ_6.width-800.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_WzfKjd",
+        "column_GBzXHQ",
+        "column_4RXWxp"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "custom_liquid_EYYjgt": {
       "type": "custom-liquid",
       "name": "anchor for contact",
       "settings": {
-        "custom_liquid": "<div id=\"specs\"></div>",
+        "custom_liquid": "<div id=\"contact\"> </div>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -215,7 +303,6 @@
         "columns_desktop": 4,
         "columns_mobile": "2",
         "color_scheme": "scheme-1",
-        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
@@ -228,9 +315,11 @@
   "order": [
     "main",
     "anchor_navigation_KAFnKm",
+    "custom_liquid_6UYTWm",
     "rich_text_pgYPjy",
     "custom_liquid_afdYND",
-    "image_banner_bD8Umc",
+    "image_with_text_JBL7Jz",
+    "multicolumn_BbLfUM",
     "custom_liquid_EYYjgt",
     "contact_form_jYDceR",
     "related-products"
