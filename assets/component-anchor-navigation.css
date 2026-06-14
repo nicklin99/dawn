@@ -112,6 +112,11 @@
   width: 60%;
 }
 
+/* Offset anchor targets so sticky nav + header don't cover them */
+:target {
+  scroll-margin-top: 8rem;
+}
+
 /* Smooth scroll behavior for the whole page */
 html {
   scroll-behavior: smooth;

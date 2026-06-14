@@ -1,4 +1,6 @@
-// Anchor Navigation - smooth scroll and active state tracking
+// Anchor Navigation - active state tracking on scroll
+// NOTE: Click handling is left to the browser's native anchor behavior.
+// Use `scroll-margin-top` on target elements to offset sticky headers.
 class AnchorNavigation {
   constructor() {
     this.links = document.querySelectorAll('.anchor-navigation__link');
@@ -8,35 +10,11 @@ class AnchorNavigation {
   init() {
     if (!this.links.length) return;
 
-    this.links.forEach(link => {
-      link.addEventListener('click', this.handleClick.bind(this));
-    });
-
     // Track active section on scroll (desktop only)
     if (window.innerWidth >= 750) {
       window.addEventListener('scroll', this.handleScroll.bind(this), { passive: true });
       this.handleScroll();
     }
-  }
-
-  handleClick(event) {
-    const href = event.currentTarget.getAttribute('href');
-    if (!href || href === '#') return;
-
-    const target = document.querySelector(href);
-    if (!target) return;
-
-    const headerHeight = this.getHeaderHeight();
-    const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-
-    event.preventDefault();
-    window.scrollTo({
-      top: targetPosition,
-      behavior: 'smooth',
-    });
-
-    // Set active state
-    this.setActiveLink(event.currentTarget);
   }
 
   handleScroll() {

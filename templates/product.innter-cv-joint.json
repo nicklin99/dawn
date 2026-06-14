@@ -1,0 +1,204 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "caption": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "caption",
+        "variant_picker",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "media_position": "right",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "anchor_navigation_KAFnKm": {
+      "type": "anchor-navigation",
+      "blocks": {
+        "anchor_link_phMCWX": {
+          "type": "anchor_link",
+          "settings": {
+            "label": "Description",
+            "anchor_id": "description",
+            "show_icon": false,
+            "link_style": "text"
+          }
+        },
+        "anchor_link_3xcmry": {
+          "type": "anchor_link",
+          "settings": {
+            "label": "Specifications",
+            "anchor_id": "specs",
+            "show_icon": false,
+            "link_style": "text"
+          }
+        },
+        "anchor_link_GxFT84": {
+          "type": "anchor_link",
+          "settings": {
+            "label": "Contact",
+            "anchor_id": "contact-form",
+            "show_icon": false,
+            "link_style": "text"
+          }
+        }
+      },
+      "block_order": [
+        "anchor_link_phMCWX",
+        "anchor_link_3xcmry",
+        "anchor_link_GxFT84"
+      ],
+      "name": "t:sections.anchor-navigation.presets.name",
+      "settings": {
+        "enable_sticky": false,
+        "color_scheme": "",
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_pgYPjy": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PKkU47": {
+          "type": "heading",
+          "settings": {
+            "heading": "Tripot Joint / Tripod Ball – CV Joint",
+            "heading_size": "h1"
+          }
+        },
+        "text_DYCXnr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Kingtime Technologies’ bearing specialists collaborate with prominent automotive and off-road vehicle Tier 1 companies to design and manufacture production volumes of tripot joint components. A tripot ball CV (constant velocity) joint is used at the inboard end of a driveshaft or halfshaft.<br/><br/></p>"
+          }
+        },
+        "text_URGNqf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>It transfers uniform torque and constant speed, despite changes in angle, enabling consistent transmission of power. A tripot joint assembly has needle bearing-shaped rollers that are mounted to a three-part yoke. These fit inside a cup with matching grooves, which attach to the differential. The rollers are mounted at 120° to one another and slide back and forth on tracks inside a housing. A typical tripot CV joint has up to 50 mm of plunge travel, and 26° of angular articulation.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PKkU47",
+        "text_DYCXnr",
+        "text_URGNqf"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_afdYND": {
+      "type": "custom-liquid",
+      "name": "anchor for specs",
+      "settings": {
+        "custom_liquid": "<div id=\"specs\"></div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_EYYjgt": {
+      "type": "custom-liquid",
+      "name": "anchor for contact",
+      "settings": {
+        "custom_liquid": "<div id=\"specs\"></div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "anchor_navigation_KAFnKm",
+    "related-products",
+    "rich_text_pgYPjy",
+    "custom_liquid_afdYND",
+    "custom_liquid_EYYjgt"
+  ]
+}
