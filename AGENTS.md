@@ -50,10 +50,10 @@ shopify theme check
 shopify theme pull
 
 # 拉取指定名称的未发布主题
-shopify theme pull --theme autoparts --nodelete
+shopify theme pull --theme 163599646955
 
 # 推送到未发布版本时保留线上有但本地没有的文件
-shopify theme push --unpublished --theme autoparts --nodelete
+shopify theme push --unpublished --theme 163599646955
 
 # 推送到已发布的主题
 shopify theme push
