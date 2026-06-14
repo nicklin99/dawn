@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "heading": "Heading",
@@ -1765,6 +1774,9 @@
         "show_rating": {
           "label": "Product rating",
           "info": "An app is required for ratings. [Learn more](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#featured-collection-show-product-rating)"
+        },
+        "show_price": {
+          "label": "Product price"
         },
         "enable_quick_buy": {
           "label": "Quick add"
@@ -4361,6 +4373,49 @@
       },
       "presets": {
         "name": "Collapsible content"
+      }
+    },
+    "anchor-navigation": {
+      "name": "Anchor navigation",
+      "settings": {
+        "enable_sticky": {
+          "label": "Enable sticky navigation"
+        }
+      },
+      "blocks": {
+        "anchor_link": {
+          "name": "Anchor link",
+          "settings": {
+            "label": {
+              "label": "Label",
+              "default": "Section"
+            },
+            "anchor_id": {
+              "label": "Anchor ID",
+              "info": "The ID of the element to scroll to. Do not include the # symbol."
+            },
+            "show_icon": {
+              "label": "Show arrow icon"
+            },
+            "link_style": {
+              "label": "Style",
+              "options__1": {
+                "label": "Text link"
+              },
+              "options__2": {
+                "label": "Button"
+              }
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Anchor navigation",
+        "blocks": {
+          "description": "Description",
+          "reviews": "Reviews",
+          "shipping": "Shipping & Returns"
+        }
       }
     }
   }
