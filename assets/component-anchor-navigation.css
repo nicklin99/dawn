@@ -4,10 +4,7 @@
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
 
-.anchor-navigation--sticky {
-  position: sticky;
-  top: 0;
-}
+
 
 .anchor-navigation__nav {
   overflow-x: auto;

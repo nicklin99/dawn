@@ -30,9 +30,15 @@ class AnchorNavigation {
                    document.querySelector('[data-anchor-nav-offset]');
     if (header) offset += header.offsetHeight;
 
-    // Anchor navigation itself (when sticky)
-    if (this.nav && window.getComputedStyle(this.nav).position === 'sticky') {
-      offset += this.nav.offsetHeight;
+    // Anchor navigation section wrapper (when sticky)
+    if (this.nav) {
+      const sectionId = this.nav.dataset.sectionId;
+      if (sectionId) {
+        const sectionEl = document.getElementById('shopify-section-' + sectionId);
+        if (sectionEl && window.getComputedStyle(sectionEl).position === 'sticky') {
+          offset += sectionEl.offsetHeight;
+        }
+      }
     }
 
     return offset;

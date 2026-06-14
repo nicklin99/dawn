@@ -13,9 +13,17 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  {%- if section.settings.enable_sticky -%}
+    #shopify-section-{{ section.id }} {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+    }
+  {%- endif -%}
 {%- endstyle -%}
 
-<div class="anchor-navigation color-{{ section.settings.color_scheme }} gradient{% if section.settings.enable_sticky %} anchor-navigation--sticky{% endif %}">
+<div class="anchor-navigation color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}">
   <div class="page-width section-{{ section.id }}-padding">
     <nav class="anchor-navigation__nav" aria-label="{{ 'sections.anchor_navigation.nav_label' | t }}">
       <ul class="anchor-navigation__list list-unstyled" role="list">
@@ -64,7 +72,7 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
+      "default": "scheme-2"
     },
     {
       "type": "header",
