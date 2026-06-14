@@ -46,6 +46,13 @@ shopify theme dev
 # 校验主题（检测 Liquid 错误、Schema 问题）
 shopify theme check
 
+# push dev to live
+
+**拉取dev更新, 再push**
+shopify theme pull -d --only config/settings_data.json --only templates/*.json
+
+shopify theme push --theme autoparts --allow-live
+
 # 拉取线上发布主题到本地
 shopify theme pull
 
