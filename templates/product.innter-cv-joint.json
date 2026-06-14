@@ -110,7 +110,7 @@
       ],
       "name": "t:sections.anchor-navigation.presets.name",
       "settings": {
-        "enable_sticky": false,
+        "enable_sticky": true,
         "color_scheme": "",
         "padding_top": 12,
         "padding_bottom": 12

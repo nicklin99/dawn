@@ -1,24 +1,46 @@
 // Anchor Navigation - active state tracking on scroll
-// NOTE: Click handling is left to the browser's native anchor behavior.
-// Use `scroll-margin-top` on target elements to offset sticky headers.
+// Click handling is left to the browser's native anchor behavior.
 class AnchorNavigation {
   constructor() {
     this.links = document.querySelectorAll('.anchor-navigation__link');
+    this.nav = document.querySelector('.anchor-navigation');
     this.init();
   }
 
   init() {
     if (!this.links.length) return;
 
-    // Track active section on scroll (desktop only)
-    if (window.innerWidth >= 750) {
-      window.addEventListener('scroll', this.handleScroll.bind(this), { passive: true });
-      this.handleScroll();
+    // Sync the sticky offset into a CSS custom property so :target scroll-margin-top is accurate
+    this.updateOffsetVar();
+    window.addEventListener('scroll', this.handleScroll.bind(this), { passive: true });
+    this.handleScroll();
+  }
+
+  updateOffsetVar() {
+    const offset = this.getStickyOffset();
+    document.documentElement.style.setProperty('--anchor-offset', offset + 'px');
+  }
+
+  getStickyOffset() {
+    let offset = 0;
+
+    // Site header
+    const header = document.querySelector('.shopify-section-header-sticky') ||
+                   document.querySelector('.header-wrapper') ||
+                   document.querySelector('[data-anchor-nav-offset]');
+    if (header) offset += header.offsetHeight;
+
+    // Anchor navigation itself (when sticky)
+    if (this.nav && window.getComputedStyle(this.nav).position === 'sticky') {
+      offset += this.nav.offsetHeight;
     }
+
+    return offset;
   }
 
   handleScroll() {
-    const scrollPosition = window.scrollY + this.getHeaderHeight() + 100;
+    const offset = this.getStickyOffset();
+    const scrollPosition = window.scrollY + offset + 20;
 
     let currentLink = null;
 
@@ -44,13 +66,6 @@ class AnchorNavigation {
       link.classList.remove('anchor-navigation__link--active');
     });
     activeLink.classList.add('anchor-navigation__link--active');
-  }
-
-  getHeaderHeight() {
-    const header = document.querySelector('.shopify-section-header-sticky') ||
-                   document.querySelector('.header-wrapper') ||
-                   document.querySelector('[data-anchor-nav-offset]');
-    return header ? header.offsetHeight : 0;
   }
 }
 
