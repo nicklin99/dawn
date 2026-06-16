@@ -49,7 +49,7 @@ shopify theme check
 # push dev to live
 
 **拉取dev更新, 再push**
-shopify theme pull -d --only config/settings_data.json --only templates/*.json
+shopify theme pull -d --only config/*.json --only templates/*.json
 
 shopify theme push --theme autoparts --allow-live
 
