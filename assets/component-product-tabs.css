@@ -1,0 +1,156 @@
+.product-tabs {
+  position: relative;
+}
+
+/* ── Header / Navigation ── */
+
+.product-tabs__header-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.product-tabs__header-wrapper[data-sticky] {
+  position: sticky;
+  top: 0;
+  background: rgb(var(--color-background));
+}
+
+.product-tabs__header {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.1);
+}
+
+.product-tabs__header::-webkit-scrollbar {
+  display: none;
+}
+
+.product-tabs__header--left {
+  justify-content: flex-start;
+}
+
+.product-tabs__header--center {
+  justify-content: center;
+}
+
+.product-tabs__header--right {
+  justify-content: flex-end;
+}
+
+/* ── Tab buttons ── */
+
+.product-tabs__tab {
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  padding: 1.4rem 2.4rem;
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.5);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--duration-default) ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.product-tabs__tab:hover {
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.product-tabs__tab--active {
+  color: rgb(var(--color-foreground));
+}
+
+/* Active tab indicator — top accent line */
+.product-tabs__tab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: rgb(var(--color-foreground));
+  transition: width var(--duration-default) ease;
+}
+
+.product-tabs__tab--active::before {
+  width: 60%;
+}
+
+/* ── Panels (always visible, content scrolls into view) ── */
+
+.product-tabs__panel {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+}
+
+.product-tabs__panel:last-of-type {
+  border-bottom: none;
+}
+
+/* Spacing between child content blocks within a tab panel */
+.product-tabs__panel > * + * {
+  margin-top: 2.4rem;
+}
+
+.product-tabs__heading {
+  margin: 0 0 1.6rem;
+  font-size: 1.8rem;
+  letter-spacing: -0.02em;
+  color: rgb(var(--color-foreground));
+}
+
+.product-tabs__content {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: rgba(var(--color-foreground), 0.65);
+}
+
+.product-tabs__content .rte > *:first-child {
+  margin-top: 0;
+}
+
+/* ── Empty state ── */
+
+.product-tabs__empty {
+  padding: 4rem 0;
+  text-align: center;
+  color: rgba(var(--color-foreground), 0.4);
+  font-size: 1.4rem;
+}
+
+/* ── Anchor target offset ── */
+
+[data-tab-panel] {
+  scroll-margin-top: 14rem;
+}
+
+/* ── Responsive ── */
+
+@media screen and (max-width: 749px) {
+  .product-tabs__tab {
+    padding: 1.2rem 1.6rem;
+    font-size: 1.2rem;
+  }
+
+  .product-tabs__panel {
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-tabs__tab::before {
+    transition: none;
+  }
+}

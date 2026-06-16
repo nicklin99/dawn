@@ -68,3 +68,20 @@ shopify theme push
 # 锚点导航用法：在 anchor-navigation section 中添加 anchor_link block，
 # anchor_id 填写目标元素的 HTML id（如 "contact-form"、"description"、"reviews"）
 ```
+
+## Blocks 设计原则
+
+Blocks and flexibility
+To balance simplicity and flexibility, you should carefully consider when to add blocks and what each block should contain. Too many blocks creates clutter and complexity. You can use the following principles to understand how to define your blocks.
+
+Group settings into blocks to simplify the editing experience and declutter the editor sidebar. For example, you can nest theme settings to customize an image block inside of the block.
+When elements follow a specific hierarchy, group elements together and optionally allow block insertion points before and after. For example, you might create a single block that controls cart page line items.
+Avoid providing blocks that are too granular. Granularity adds complexity to the theme code and to the merchant editing experience. For example, you should group the author, date, and comments into a single block or into settings, rather than introducing these attributes as three separate blocks.
+
+## Sections 设计原则
+Sections are available on all pages.
+
+When building theme templates, you should ensure that your template's default content is available in a main template section, and that sections can be added, removed, and reordered. You can use sections to do the following:
+
+To add, remove, or reorder content at the template or section group level
+To control theme settings that are scoped to the entire section's layout and content

@@ -1,0 +1,176 @@
+{{ 'component-product-tabs.css' | asset_url | stylesheet_tag }}
+{{ 'product-tabs.js' | asset_url | script_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- assign tab_labels = section.settings.tab_labels | newline_to_br | split: '<br />' -%}
+
+<product-tabs
+  class="product-tabs color-{{ section.settings.color_scheme }} gradient"
+  data-enable-sticky="{{ section.settings.enable_sticky_nav }}"
+  data-section-id="{{ section.id }}"
+>
+  <div class="page-width">
+    {%- if section.blocks.size > 0 -%}
+      <div
+        class="product-tabs__header-wrapper"
+        data-tabs-header
+        {% if section.settings.enable_sticky_nav %}data-sticky{% endif %}
+      >
+        <nav
+          class="product-tabs__header product-tabs__header--{{ section.settings.nav_alignment }}"
+          role="tablist"
+          aria-label="{{ 'sections.product_tabs.nav_label' | t }}"
+          id="product-tabs-nav-{{ section.id }}"
+        >
+          {%- for block in section.blocks -%}
+            {%- assign tab_label = tab_labels[forloop.index0] | strip | default: 'Tab' -%}
+            <button
+              class="product-tabs__tab{% if forloop.first %} product-tabs__tab--active{% endif %}"
+              role="tab"
+              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+              aria-controls="product-tabs-panel-{{ section.id }}-{{ forloop.index0 }}"
+            >
+              {{ tab_label }}
+            </button>
+          {%- endfor -%}
+        </nav>
+      </div>
+
+      <div class="section-{{ section.id }}-padding">
+        {%- for block in section.blocks -%}
+          <div
+            class="product-tabs__panel"
+            id="product-tabs-panel-{{ section.id }}-{{ forloop.index0 }}"
+            role="tabpanel"
+            tabindex="0"
+            data-tab-panel
+            {{ block.shopify_attributes }}
+          >
+            {% render block %}
+          </div>
+        {%- endfor -%}
+      </div>
+
+    {%- else -%}
+      <div class="product-tabs__empty">
+        <p>{{ 'sections.product_tabs.no_tabs' | t }}</p>
+      </div>
+    {%- endif -%}
+  </div>
+</product-tabs>
+
+{% schema %}
+{
+  "name": "t:sections.product-tabs.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_nav",
+      "label": "Enable sticky navigation",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "tab_labels",
+      "label": "Tab labels",
+      "info": "One label per line. The first line labels the first block, the second labels the second block, etc.",
+      "default": "Description\nShipping\nReturns"
+    },
+    {
+      "type": "select",
+      "id": "nav_alignment",
+      "label": "Tab bar alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.colors.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    { "type": "@theme" },
+    { "type": "@app" }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.product-tabs.presets.name",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Hello, world!</h3>"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "text": "<p>How's it going?</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
